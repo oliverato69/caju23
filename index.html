@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAJU23 - Personalización Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        guateblue: '#4997D0',
+                        guatewhite: '#FFFFFF',
+                        guatewarm: '#F8B825',
+                        mexgreen: '#006847',
+                        mexwhite: '#FFFFFF',
+                        mexred: '#CE1126',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(73,151,208,0.9) 0%, rgba(0,104,71,0.9) 100%);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,184,37,0.1) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .instagram-btn {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .flag-border {
+            border-image: linear-gradient(to right, #4997D0 33%, #FFFFFF 33% 66%, #CE1126 66%) 1;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: #F8B825;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            left: 25%;
+            background: linear-gradient(to right, #4997D0, #F8B825, #CE1126);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/17653362404?text=Hola%20me%20gustaría%20cotizar:" target="_blank" class="fixed bottom-8 right-8 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-xl hover:bg-green-600 transition-all duration-300 floating-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50 border-b-4 flag-border">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-guateblue to-mexgreen flex items-center justify-center text-white font-bold text-xl mr-3 shadow-md">C23</div>
+                <h1 class="text-2xl font-bold text-gray-800">CAJU<span class="bg-clip-text text-transparent bg-gradient-to-r from-guateblue to-mexgreen">23</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-700 hover:text-guateblue transition nav-link">Inicio</a>
+                <a href="#catalogo" class="text-gray-700 hover:text-mexgreen transition nav-link">Catálogo</a>
+                <a href="#nosotros" class="text-gray-700 hover-text-guatewarm transition nav-link">Nosotros</a>
+                <a href="#testimonios" class="text-gray-700 hover-text-mexred transition nav-link">Testimonios</a>
+                <a href="#contacto" class="text-gray-700 hover-text-guateblue transition nav-link">Contacto</a>
+            </nav>
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient py-20 md:py-32 px-4 text-center text-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Transformamos tus ideas en <span class="bg-clip-text text-transparent bg-gradient-to-r from-guatewarm to-white">artículos premium</span></h2>
+            <p class="text-xl md:text-2xl mb-8">Personalización de productos con excelencia y diseño de lujo</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#catalogo" class="bg-white hover:bg-gray-100 text-guateblue font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">Ver Catálogo</a>
+                <a href="#contacto" class="bg-transparent hover:bg-white hover:bg-opacity-20 text-white font-bold py-3 px-8 rounded-full border-2 border-white transition duration-300 shadow-lg">Cotizar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-8 rounded-xl bg-gradient-to-b from-white to-guatewhite shadow-lg hover:shadow-xl transition">
+                    <div class="w-20 h-20 bg-guateblue rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-md">
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-guateblue">Valores Cristianos</h3>
+                    <p class="text-gray-600">Trabajamos con honestidad, integridad y excelencia como testimonio de nuestra fe.</p>
+                </div>
+                <div class="text-center p-8 rounded-xl bg-gradient-to-b from-white to-guatewhite shadow-lg hover:shadow-xl transition">
+                    <div class="w-20 h-20 bg-mexgreen rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-md">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-mexgreen">Calidad Premium</h3>
+                    <p class="text-gray-600">Utilizamos materiales de primera y técnicas avanzadas para resultados duraderos.</p>
+                </div>
+                <div class="text-center p-8 rounded-xl bg-gradient-to-b from-white to-guatewhite shadow-lg hover:shadow-xl transition">
+                    <div class="w-20 h-20 bg-mexred rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-md">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-mexred">Entrega Rápida</h3>
+                    <p class="text-gray-600">Comprometidos con plazos de entrega puntuales para satisfacer tus necesidades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section id="catalogo" class="py-16 bg-gradient-to-b from-guatewhite to-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 section-title">Catálogo Premium</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Descubre nuestra exclusiva variedad de productos personalizables para iglesias, negocios y eventos especiales.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tazas -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c228ca89b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tazas personalizadas" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-xl font-bold">Tazas Premium</h3>
+                            <p class="text-sm opacity-90">Desde $12.99</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Ideales para regalos corporativos o eventos especiales con diseños únicos.</p>
+                        <a href="#contacto" class="inline-block bg-guateblue hover:bg-guateblue/90 text-white font-semibold py-2 px-6 rounded-full transition">Cotizar <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Ropa -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Ropa personalizada" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-xl font-bold">Ropa Elegante</h3>
+                            <p class="text-sm opacity-90">Desde $19.99</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Camisetas, sudaderas y más con diseños exclusivos para tu iglesia o negocio.</p>
+                        <a href="#contacto" class="inline-block bg-mexgreen hover:bg-mexgreen/90 text-white font-semibold py-2 px-6 rounded-full transition">Cotizar <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Termos -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Termos personalizados" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-xl font-bold">Termos Exclusivos</h3>
+                            <p class="text-sm opacity-90">Desde $24.99</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Perfectos para mantener tus bebidas favoritas con estilo y personalización.</p>
+                        <a href="#contacto" class="inline-block bg-mexred hover:bg-mexred/90 text-white font-semibold py-2 px-6 rounded-full transition">Cotizar <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contacto" class="inline-block bg-gradient-to-r from-guateblue to-mexgreen hover:from-guateblue/90 hover:to-mexgreen/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">Ver Catálogo Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 section-title">Sobre CAJU23</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Más que un negocio, una misión con propósito</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Equipo de trabajo" class="rounded-xl shadow-xl w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-guatewarm text-white p-6 rounded-xl shadow-lg w-1/2">
+                        <h4 class="font-bold text-lg mb-2">+500</h4>
+                        <p class="text-sm">Clientes satisfechos</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="mb-8 p-6 bg-gradient-to-r from-white to-guatewhite rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4 text-guateblue">Nuestra Historia</h3>
+                        <p class="text-gray-600">Fundada en 2023, CAJU23 nació del deseo de combinar creatividad, calidad y valores cristianos en cada producto personalizado que entregamos a nuestros clientes.</p>
+                    </div>
+                    
+                    <div class="mb-8 p-6 bg-gradient-to-r from-white to-guatewhite rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4 text-mexgreen">Nuestra Filosofía</h3>
+                        <p class="text-gray-600">Creemos que cada diseño cuenta una historia y cada producto debe reflejar la excelencia que honra a Dios y satisface completamente a nuestros clientes.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-b from-guatewhite to-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="w-12 h-12 bg-guateblue rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4 class="font-bold text-guateblue">Calidad</h4>
+                        </div>
+                        <div class="bg-gradient-to-b from-guatewhite to-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="w-12 h-12 bg-mexgreen rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4 class="font-bold text-mexgreen">Pasión</h4>
+                        </div>
+                        <div class="bg-gradient-to-b from-guatewhite to-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="w-12 h-12 bg-mexred rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4 class="font-bold text-mexred">Creatividad</h4>
+                        </div>
+                        <div class="bg-gradient-to-b from-guatewhite to-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="w-12 h-12 bg-guatewarm rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl">
+                                <i class="fas fa-cross"></i>
+                            </div>
+                            <h4 class="font-bold text-guatewarm">Fe</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Técnicas y Equipos -->
+    <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 section-title">Tecnología de Vanguardia</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Utilizamos equipos y técnicas avanzadas para garantizar los mejores resultados</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition">
+                    <div class="w-20 h-20 bg-guateblue rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-md">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-guateblue">DTF y UAV DTF</h3>
+                    <p class="text-gray-600">Transferencia digital directa al textil para diseños vibrantes y duraderos.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition">
+                    <div class="w-20 h-20 bg-mexgreen rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-md">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-mexgreen">Vinil Textil</h3>
+                    <p class="text-gray-600">Cortes precisos de vinil para personalización de alta calidad.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition">
+                    <div class="w-20 h-20 bg-mexred rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-md">
+                        <i class="fas fa-thread"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-mexred">Bordado</h3>
+                    <p class="text-gray-600">Bordado computarizado con máquina Ricoma EM-1010 para acabados premium.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition">
+                    <div class="w-20 h-20 bg-guatewarm rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-md">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-guatewarm">Sublimación</h3>
+                    <p class="text-gray-600">Técnica que permite imprimir diseños a todo color con gran durabilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 section-title">Clientes Satisfechos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Lo que dicen quienes han confiado en nosotros</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-14 h-14 rounded-full bg-gray-300 overflow-hidden mr-4 shadow-md">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente satisfecho" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">María González</h4>
+                            <p class="text-sm text-gray-500">Iglesia Renuevo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Las camisetas para nuestro evento de jóvenes quedaron espectaculares. El diseño captó perfectamente nuestro mensaje. ¡Super recomendados!"</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-14 h-14 rounded-full bg-gray-300 overflow-hidden mr-4 shadow-md">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfecho" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Juan Pérez</h4>
+                            <p class="text-sm text-gray-500">Cafetería El Grano</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Los mandiles personalizados para nuestro equipo fueron un éxito. La calidad del bordado es excelente y han resistido perfectamente el uso diario."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-14 h-14 rounded-full bg-gray-300 overflow-hidden mr-4 shadow-md">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente satisfecho" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Laura Martínez</h4>
+                            <p class="text-sm text-gray-500">Conferencia Mujeres de Fe</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Trabajar con CAJU23 fue una bendición. Crearon termos y tazas que fueron el regalo perfecto. La atención y seguimiento fueron impecables."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto" class="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-gradient-to-b from-guateblue to-mexgreen text-white p-8 md:p-12">
+                        <h2 class="text-3xl font-bold mb-4">¡Cotiza tu proyecto!</h2>
+                        <p class="mb-6">Completa este formulario y nos pondremos en contacto contigo a la brevedad para ofrecerte una solución personalizada.</p>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold mb-2">Contacto Directo</h3>
+                            <p class="mb-2"><i class="fas fa-envelope mr-2"></i> cajuveinteytres@gmail.com</p>
+                            <p><i class="fas fa-phone-alt mr-2"></i> +1 (765) 336-2404</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Síguenos</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/caju23#" target="_blank" class="bg-white/20 hover:bg-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/caj.u23/" target="_blank" class="bg-white/20 hover:bg-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <form id="cotizacionForm" class="space-y-6">
+                            <div>
+                                <label for="nombre" class="block text-gray-700 font-medium mb-2">Nombre completo*</label>
+                                <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-guateblue">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico*</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexgreen">
+                            </div>
+                            <div>
+                                <label for="telefono" class="block text-gray-700 font-medium mb-2">Teléfono*</label>
+                                <input type="tel" id="telefono" name="telefono" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexred">
+                            </div>
+                            <div>
+                                <label for="producto" class="block text-gray-700 font-medium mb-2">Producto de interés*</label>
+                                <select id="producto" name="producto" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-guatewarm">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="tazas">Tazas</option>
+                                    <option value="ropa">Ropa</option>
+                                    <option value="termos">Termos</option>
+                                    <option value="gorras">Gorras</option>
+                                    <option value="mandiles">Mandiles</option>
+                                    <option value="bordados">Bordados</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-guateblue to-mexgreen hover:from-guateblue/90 hover:to-mexgreen/90 text-white font-bold py-3 px-4 rounded-lg shadow-md transition duration-300">Enviar Cotización</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería/Reels -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 section-title">Nuestros Trabajos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Algunos ejemplos de nuestros productos personalizados</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1589998059171-988d322dfe03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Trabajo de CAJU23" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Trabajo de CAJU23" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Trabajo de CAJU23" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1620207419174-5f865568e4f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Trabajo de CAJU23" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/caj.u23/" target="_blank" class="inline-flex items-center instagram-btn hover:opacity-90 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+                    Ver más en Instagram <i class="fab fa-instagram ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-guateblue to-mexgreen text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-guateblue font-bold text-lg mr-3 shadow-md">C23</div>
+                        <h3 class="text-xl font-bold">CAJU<span class="text-white">23</span></h3>
+                    </div>
+                    <p class="text-white/90">Personalización de productos con excelencia y valores cristianos.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-white/90 hover:text-white transition">Inicio</a></li>
+                        <li><a href="#catalogo" class="text-white/90 hover:text-white transition">Catálogo</a></li>
+                        <li><a href="#nosotros" class="text-white/90 hover:text-white transition">Sobre Nosotros</a></li>
+                        <li><a href="#testimonios" class="text-white/90 hover:text-white transition">Testimonios</a></li>
+                        <li><a href="#contacto" class="text-white/90 hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-white/90">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>cajuveinteytres@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <span>+1 (765) 336-2404</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Redes Sociales</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/caju23#" target="_blank" class="bg-white/20 hover:bg-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/caj.u23/" target="_blank" class="bg-white/20 hover:bg-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/17653362404?text=Hola%20me%20gustaría%20cotizar:" target="_blank" class="bg-white/20 hover:bg-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-8 pt-8 text-center text-white/90">
+                <p>&copy; 2023 CAJU23. Todos los derechos reservados.</p>
+                <p class="mt-2">"Y todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres" - Colosenses 3:23</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission
+        document.getElementById('cotizacionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const producto = document.getElementById('producto').value;
+            const mensaje = document.getElementById('mensaje')?.value;
+            
+            // Here you would typically send this data to your server
+            // For demo purposes, we'll just show an alert
+            alert(`Gracias ${nombre} por tu cotización de ${producto}. Nos pondremos en contacto contigo pronto al ${telefono} o ${email}.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Mobile menu toggle (would need more JS for full functionality)
+        document.querySelector('header button').addEventListener('click', function() {
+            alert('Menú móvil se abriría aquí. En un desarrollo completo, esto mostraría/ocultaría el menú.');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=oliverato69/caju23" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
